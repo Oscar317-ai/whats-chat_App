@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: e-chat
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: chatdb  # Replace with your MongoDB database name
+server:
+  port: 8080

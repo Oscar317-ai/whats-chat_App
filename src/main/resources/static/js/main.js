@@ -19,18 +19,20 @@ var colors = [
 function connect(event) {
     username = document.querySelector('#name').value.trim();
 
-    if(username) {
+    if (username) {
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
 
-        // Replace '/ws' with the full ngrok URL
-        var socket = new SockJS('https://d1e7-102-210-221-6.ngrok-free.app/ws');
-        stompClient = Stomp.over(socket);
+        // Use WebSocket Secure with the ngrok URL  https://66eb-102-210-221-6.ngrok-free.app
+        var socket = new SockJS('https://5efa-102-210-221-6.ngrok-free.app/ws');
 
+        stompClient = Stomp.over(socket);
         stompClient.connect({}, onConnected, onError);
     }
     event.preventDefault();
 }
+
+
 
 
 function onConnected() {
